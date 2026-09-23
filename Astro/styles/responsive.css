@@ -1,0 +1,75 @@
+@media (max-width: 950px) {
+  .page { padding: 25px 20px; gap: 22px; }
+  .device { padding: 24px 18px 21px; }
+  .game-layout { grid-template-columns: 65px minmax(0,1fr) 65px; gap: 12px; }
+  .direction { width: 59px; height: 59px; }
+  .device-footer { margin: 18px 78px 0; gap: 14px; }
+  .speaker { display: none; }
+  .overlay-card { padding: 14px 12px; }
+  .keyboard-guide { margin: 9px 0; }
+  .overlay h1 { margin: 5px 0; }
+  .overlay p { font-size: 10px; }
+  .overlay .overlay-footnote { margin-top: 8px; font-size: 8px; }
+}
+@media (max-width: 620px) {
+  .page { padding: 22px 10px; }
+  .page-heading p, .page-footer > :last-child { display: none; }
+  .brand { font-size: 12px; letter-spacing: 1.5px; }
+  .model { font-size: 9px; }
+  .game-layout { grid-template-columns: 46px minmax(0,1fr) 46px; gap: 6px; }
+  .direction { width: 44px; height: 44px; border-width: 3px; }
+  .control-bank { gap: 18px; padding-top: 0; }
+  .screen-bezel { padding: 9px 7px 7px; }
+  .screen-caption { display: none; }
+  .screen-topline { font-size: 8px; }
+  .device-footer { margin: 15px 0 0; gap: 10px; }
+  .screw { display: none; }
+  .record { gap: 7px; }
+  .record > span { font-size: 6px; }
+  .record strong { font-size: 18px; }
+  .utility-controls { gap: 4px; }
+  .utility-controls button { font-size: 6px; padding: 7px; }
+  .utility-controls span { display: none; }
+  .overlay-card { width: 88%; padding: 8px; }
+  .overlay-kicker, .overlay-footnote { display: none; }
+  .overlay h1 { font-size: 23px; }
+  .keyboard-guide { margin: 4px 0; gap: 10px; }
+  .keyboard-guide > span { display: flex; gap: 3px; }
+  .keyboard-guide small { display: none; }
+  kbd { height: 22px; width: 23px; font-size: 10px; }
+  .primary-button { padding: 8px 12px; font-size: 9px; }
+  .primary-button span { font-size: 7px; }
+}
+.touch-device { overflow: hidden; overscroll-behavior: none; }
+.touch-device .page { height: 100dvh; min-height: 0; padding: max(8px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left)); }
+.touch-device .page-heading, .touch-device .page-footer, .touch-device .key-label, .touch-device .keyboard-guide, .touch-device .speaker, .touch-device .screw, .touch-device .utility-controls span { display: none; }
+.touch-device .device { width: min(1140px, 100%, calc((100dvh - 174px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) * 1.73 + 224px)); padding: 12px 16px 13px; border-radius: 22px; }
+.touch-device .device-heading { padding: 0 4px 9px; }
+.touch-device .brand { font-size: 12px; letter-spacing: 2px; }
+.touch-device .brand-mark { font-size: 19px; line-height: 18px; width: 23px; }
+.touch-device .model { font-size: 9px; }
+.touch-device .game-layout { grid-template-columns: 72px minmax(0,1fr) 72px; gap: 12px; }
+.touch-device .control-bank { gap: 25px; padding: 0; justify-content: space-evenly; }
+.touch-device .direction { width: 68px; height: 68px; }
+.touch-device .screen-bezel { padding: 8px 9px 7px; }
+.touch-device .screen-topline { font-size: 9px; padding-bottom: 6px; }
+.touch-device .screen-bottomline { padding-top: 5px; font-size: 5px; }
+.touch-device .device-footer { margin: 9px 84px 0; gap: 10px; }
+.touch-device .record > span { font-size: 6px; max-width: 75px; }
+.touch-device .record strong { font-size: 18px; }
+.touch-device .utility-controls button { min-height: 32px; padding: 7px 9px; font-size: 7px; }
+.touch-device .touch-guide { display: block; margin: 9px 0; font-size: 10px; }
+.touch-device .overlay-card { width: 76%; padding: 13px; }
+.touch-device .overlay h1 { font-size: clamp(22px, 5dvh, 36px); margin: 5px 0; }
+.touch-device .overlay p { font-size: 10px; }
+.touch-device .overlay-kicker { font-size: 7px; }
+.touch-device .overlay .overlay-footnote { font-size: 8px; margin-top: 8px; }
+@media (max-height: 430px) {
+  .touch-device .device { width: min(100%, calc((100dvh - 156px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) * 1.73 + 216px)); padding: 8px 12px 9px; }
+  .touch-device .device-footer { margin-top: 5px; }
+  .touch-device .overlay-card { padding: 8px; }
+  .touch-device .overlay-kicker, .touch-device .overlay-footnote { display: none; }
+  .touch-device .touch-guide { margin: 5px 0; font-size: 9px; }
+  .touch-device .overlay h1 { font-size: 22px; }
+  .touch-device .primary-button { padding: 9px 12px; }
+}

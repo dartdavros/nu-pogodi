@@ -1,0 +1,188 @@
+:root {
+  --ink: #1b2317;
+  --lcd: #c4cbaa;
+  --page: #16181b;
+  --font: "Trebuchet MS", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 40%, #2c3036 0%, var(--page) 70%);
+  background-color: var(--page);
+}
+
+body {
+  position: fixed;
+  inset: 0;
+  font-family: var(--font);
+  color: #e9ecef;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+#app {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: max(12px, 2.5vmin);
+  touch-action: none;
+}
+
+.is-touch #app {
+  padding:
+    max(4px, env(safe-area-inset-top))
+    max(4px, env(safe-area-inset-right))
+    max(4px, env(safe-area-inset-bottom))
+    max(4px, env(safe-area-inset-left));
+}
+
+#device {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ---------- LCD ---------- */
+
+.ink { fill: var(--ink); }
+.bg { fill: var(--lcd); }
+.ink-s { fill: none; stroke: var(--ink); stroke-linecap: round; stroke-linejoin: round; }
+.bg-s { fill: none; stroke: var(--lcd); stroke-linecap: round; stroke-linejoin: round; }
+
+.ghost { opacity: .065; }
+.ghost-seg { opacity: .07; }
+.penalties .legs-b { display: none; }
+.floor { opacity: .55; }
+.grass { opacity: .35; }
+.window-glass { fill: var(--ink); opacity: .1; }
+
+.lcd-text { font-family: var(--font); fill: var(--ink); font-weight: 700; }
+.lcd-text.small { font-size: 17px; font-weight: 600; }
+.lcd-text.best { font-size: 34px; letter-spacing: 2px; }
+.lcd-text.title { font-size: 50px; letter-spacing: 1px; }
+.lcd-text.big { font-size: 34px; }
+.lcd-text.body { font-size: 24px; font-weight: 600; }
+.lcd-text.keycap { font-size: 30px; fill: var(--lcd); }
+.lcd-text.btn-label { font-size: 28px; fill: var(--lcd); letter-spacing: 2px; }
+
+/* На телефоне сцена сжата примерно вдвое — текст подсказок крупнее. */
+.is-touch .lcd-text.small { font-size: 20px; }
+.is-touch .lcd-text.body { font-size: 29px; }
+.is-touch .lcd-text.title { font-size: 56px; }
+.is-touch .lcd-text.btn-label { font-size: 32px; }
+
+.hare {
+  transform: translateY(132px);
+  transition: transform .3s cubic-bezier(.3, 1.35, .5, 1);
+}
+.hare.up { transform: translateY(0); }
+.hare-paw {
+  transform-box: fill-box;
+  transform-origin: 0% 100%;
+  animation: hare-wave .45s ease-in-out infinite alternate;
+}
+@keyframes hare-wave {
+  from { transform: rotate(-14deg); }
+  to { transform: rotate(16deg); }
+}
+
+.pen.half { animation: blink .5s steps(1) infinite; }
+@keyframes blink { 50% { opacity: .15; } }
+
+.wolf.bump .arms { transform: translateY(4px); }
+
+.overlay { cursor: pointer; }
+.overlay .panel { fill: var(--lcd); fill-opacity: .95; stroke: var(--ink); stroke-width: 4; }
+.overlay .lcd-btn rect { fill: var(--ink); }
+.overlay:hover .lcd-btn rect { fill: #33402b; }
+
+/* ---------- Корпус ---------- */
+
+.brand {
+  font-family: var(--font);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  fill: #6b1c12;
+}
+.device-title {
+  font-family: var(--font);
+  font-size: 40px;
+  font-weight: 800;
+  font-style: italic;
+  fill: #c1301f;
+}
+.caption {
+  font-family: var(--font);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  fill: #7d8289;
+}
+
+.pill { cursor: pointer; }
+.pill-hit { fill: transparent; }
+.pill-face { fill: url(#gPill); stroke: #1b1d20; stroke-width: 3; transition: transform 60ms; }
+.pill-label { font-family: var(--font); font-size: 27px; font-weight: 700; letter-spacing: 2px; fill: #f1f3f5; pointer-events: none; }
+.pill-label.sound-text { font-size: 23px; letter-spacing: 1px; }
+.pill-icon { fill: #f1f3f5; stroke: #f1f3f5; }
+.pill:hover .pill-face { fill: #3d4148; }
+.pill.pressed .pill-face { fill: #1d1f23; }
+
+.gbtn { cursor: pointer; }
+.gbtn .ring { fill: url(#gRing); stroke: #5c6168; stroke-width: 3; }
+.gbtn .cap { transition: transform 50ms; }
+.gbtn .cap-face { fill: url(#gBtn); stroke: #6d1a10; stroke-width: 3; }
+.gbtn.pressed .cap { transform: translateY(5px) scale(.965); }
+.gbtn.pressed .cap-face { fill: url(#gBtnDown); }
+.key-label { font-family: var(--font); font-size: 50px; font-weight: 800; fill: #fff3ee; fill-opacity: .92; pointer-events: none; }
+.touch-label { fill: #fff3ee; fill-opacity: .9; pointer-events: none; display: none; }
+.is-touch .key-label { display: none; }
+.is-touch .touch-label { display: inline; }
+
+/* ---------- Портретная ориентация на touch-устройствах ---------- */
+
+#rotate {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  box-sizing: border-box;
+  text-align: center;
+  background: var(--page);
+}
+.rotate-icon { width: min(46vw, 220px); height: auto; }
+.rotate-phone {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: rotate-phone 2.4s ease-in-out infinite;
+}
+@keyframes rotate-phone {
+  0%, 20% { transform: rotate(0deg); }
+  45%, 80% { transform: rotate(-90deg); }
+  100% { transform: rotate(0deg); }
+}
+.rotate-title { margin: 8px 0 0; font-size: 22px; font-weight: 700; }
+.rotate-sub { margin: 0; max-width: 320px; font-size: 15px; line-height: 1.4; color: #aab0b7; }
+
+@media (orientation: portrait) {
+  .is-touch #rotate { display: flex; }
+  .is-touch #app { visibility: hidden; }
+}
+
+.noscript { position: fixed; inset: auto 0 16px; text-align: center; }

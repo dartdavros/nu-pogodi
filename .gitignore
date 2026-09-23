@@ -1,0 +1,16 @@
+# IDE
+.idea/
+.vscode/
+
+# Архивы сборок
+*.zip
+
+# Локальные настройки Claude Code
+.claude/
+
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Заметки о развёртывании на сервере — только локально
+Astro/deploy/

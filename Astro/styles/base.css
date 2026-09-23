@@ -1,0 +1,33 @@
+:root { color-scheme: light; --ink: #323b37; --red: #b84436; --lcd: #bcc5a5; --lcd-ink: #344333; --shell: #ece8dd; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #e7e3da; color: var(--ink); font-family: "Segoe UI", Arial, sans-serif; }
+button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+button:focus-visible { outline: 3px solid #835d28; outline-offset: 5px; }
+button:disabled { cursor: default; opacity: .4; }
+button, .device { -webkit-user-select: none; user-select: none; }
+.page { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 38px 36px; gap: 26px; }
+.page-heading, .page-footer { width: min(1140px, 100%); display: flex; align-items: center; justify-content: space-between; }
+.eyebrow { color: #8e493e; font-size: 10px; font-weight: 700; letter-spacing: 3px; }
+.page-heading p { color: #797b71; margin: 0; font-size: 12px; }
+.page-footer { color: #83857b; font-size: 9px; letter-spacing: 1.3px; }
+.page-footer b { font-weight: 400; margin: 0 12px; }
+.sr-only { position: absolute; top: 0; left: 0; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+[hidden] { display: none !important; }
+.overlay { position: absolute; inset: 0; display: grid; place-items: center; background: #bcc5a54d; }
+.overlay-card { width: 64%; max-width: 390px; padding: 23px 22px 19px; text-align: center; background: #c6cdb2f5; border: 1px solid #6d795b; box-shadow: 0 5px 0 #34433313; border-radius: 3px; }
+.overlay-kicker { font-size: 8px; letter-spacing: 2.4px; font-weight: 700; }
+.overlay h1 { margin: 8px 0 10px; font-size: clamp(22px, 3.3vw, 43px); font-weight: 800; letter-spacing: -1.4px; color: #344333; }
+.overlay p { font-size: 12px; line-height: 1.55; margin: 0; }
+.keyboard-guide { display: flex; justify-content: center; gap: 17px; align-items: center; margin: 16px 0; }
+.keyboard-guide > span { display: grid; gap: 5px; }
+kbd { width: 30px; height: 25px; display: grid; place-items: center; border: 1px solid #748063; border-bottom-width: 3px; border-radius: 4px; font-family: inherit; font-size: 12px; font-weight: 700; }
+.keyboard-guide small { font-size: 7px; line-height: 30px; letter-spacing: 1.5px; }
+.primary-button { background: #344333; color: #e2e7cf; border: 0; border-radius: 3px; padding: 13px 20px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; min-height: 44px; }
+.primary-button:hover { background: #45563f; }
+.primary-button span { font-size: 8px; margin-left: 12px; letter-spacing: 1px; }
+.overlay .overlay-footnote { margin: 12px auto 0; max-width: 255px; font-size: 9px; color: #58634e; }
+.touch-guide { display: none; }
+.rotate-message { position: fixed; inset: 0; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 30px; background: var(--shell); }
+.rotate-message svg { width: 140px; fill: none; stroke: var(--red); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.rotate-message h2 { font-size: 27px; margin: 25px 0 10px; }
+.rotate-message p { font-size: 14px; line-height: 1.7; color: #72786c; }

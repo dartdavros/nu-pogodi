@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e9e4d8">
+  <title>Ну, погоди! — Электроника</title>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/device.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+  <script defer src="js/mechanics.js"></script>
+  <script defer src="js/art.js"></script>
+  <script defer src="js/scene.js"></script>
+  <script defer src="js/display.js"></script>
+  <script defer src="js/audio.js"></script>
+  <script defer src="js/controls.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page-heading">
+      <span class="eyebrow">КАРМАННАЯ КЛАССИКА</span>
+      <p>Знакомая игра. Ещё одна попытка.</p>
+    </header>
+    <section class="device" aria-label="Электронная игра Ну, погоди!">
+      <header class="device-heading">
+        <div class="brand"><span class="brand-mark" aria-hidden="true">э</span> ЭЛЕКТРОНИКА</div>
+        <span class="model">ИМ–02 <span> / </span> 1984</span>
+      </header>
+      <div class="game-layout">
+        <div class="control-bank left-bank" aria-label="Левые лотки">
+          <div class="control-unit"><button class="direction" data-lane="0" aria-label="Верхний левый лоток, Q"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M31 32 17 18m0 13V18h13"/></svg></button><span class="key-label">Q</span></div>
+          <div class="control-unit"><button class="direction" data-lane="1" aria-label="Нижний левый лоток, A"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M31 16 17 30m0-13v13h13"/></svg></button><span class="key-label">A</span></div>
+        </div>
+        <div class="screen-bezel">
+          <div class="screen-topline"><span>НУ, ПОГОДИ!</span><span class="screen-caption">ЭЛЕКТРОННАЯ ИГРА</span></div>
+          <div class="screen" id="screen">
+            <svg id="game-scene" viewBox="0 0 900 520" role="img" aria-label="Волк ловит яйца с четырёх лотков"></svg>
+            <div class="overlay" id="overlay">
+              <div class="overlay-card">
+                <span class="overlay-kicker" id="overlay-kicker">ВСЁ КАК В ДЕТСТВЕ</span>
+                <h1 id="overlay-title">Ну, погоди!</h1>
+                <p id="overlay-copy">Четыре лотка. Одна корзина.<br>Поймай каждое яйцо!</p>
+                <div class="keyboard-guide" id="keyboard-guide" aria-label="Q и A слева, P и L справа"><span><kbd>Q</kbd><kbd>A</kbd></span><small>ВЕРХ<br>НИЗ</small><span><kbd>P</kbd><kbd>L</kbd></span></div>
+                <p class="touch-guide">Лови яйца четырьмя красными кнопками.</p>
+                <button id="start" class="primary-button">START <span>НАЧАТЬ ИГРУ</span></button>
+                <p class="overlay-footnote" id="overlay-footnote">3 штрафа — конец игры. С Зайцем — полштрафа.</p>
+              </div>
+            </div>
+          </div>
+          <div class="screen-bottomline"><span>ЛОВИ МОМЕНТ</span><span>● <span id="status-text">ГОТОВ К ИГРЕ</span></span></div>
+        </div>
+        <div class="control-bank right-bank" aria-label="Правые лотки">
+          <div class="control-unit"><button class="direction" data-lane="2" aria-label="Верхний правый лоток, P"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m17 32 14-14m-13 0h13v13"/></svg></button><span class="key-label">P</span></div>
+          <div class="control-unit"><button class="direction" data-lane="3" aria-label="Нижний правый лоток, L"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m17 16 14 14m-13 0h13V17"/></svg></button><span class="key-label">L</span></div>
+        </div>
+      </div>
+      <footer class="device-footer">
+        <div class="record"><span>ЛУЧШИЙ РЕЗУЛЬТАТ</span><strong id="best">000</strong></div>
+        <div class="utility-controls"><button id="pause" disabled>ПАУЗА <span>ESC</span></button><button id="sound" aria-pressed="true">ЗВУК: ВКЛ</button></div>
+        <div class="speaker" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      </footer>
+      <span class="screw screw-left" aria-hidden="true"></span><span class="screw screw-right" aria-hidden="true"></span>
+    </section>
+    <footer class="page-footer"><span>Q / A — СЛЕВА <b>·</b> P / L — СПРАВА <b>·</b> ESC — ПАУЗА</span><span>СОБРАНО ИЗ ВОСПОМИНАНИЙ</span></footer>
+  </main>
+  <aside id="rotate" class="rotate-message" aria-label="Поверните устройство" hidden>
+    <svg viewBox="0 0 160 130" aria-hidden="true"><rect x="53" y="32" width="54" height="90" rx="10" transform="rotate(-35 80 77)"/><path d="M34 38A52 52 0 0 1 127 28m-1-20 2 21-21-2"/><circle cx="105" cy="110" r="2"/></svg>
+    <h2>Поверни игру</h2><p>Волку нужно больше места.<br>Поверни устройство горизонтально.</p>
+  </aside>
+  <div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>
